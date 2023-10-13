@@ -6,7 +6,6 @@ import HomePageNavbar from "@/components/Navbar/HomePageNavbar";
 import HomePageCreativeBanner from "@/components/HomePageCreativeBanner";
 import HomePageIcons from "@/components/HomePageIcons/HomePageIcons";
 import Footers from "@/components/Footers/Footers";
-
 export default function Home() {
 
   return (

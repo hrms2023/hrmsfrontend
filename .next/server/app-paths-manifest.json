@@ -1,9 +1,8 @@
 {
-  "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/bankdetails/page": "app/bankdetails/page.js",
-  "/basicinformation/page": "app/basicinformation/page.js",
-  "/basicinformation/[...slug]/page": "app/basicinformation/[...slug]/page.js",
+  "/educationDetails/page": "app/educationDetails/page.js",
   "/jobdetails/[...slug]/page": "app/jobdetails/[...slug]/page.js",
-  "/artistprofile/[...slug]/page": "app/artistprofile/[...slug]/page.js"
+  "/educationDetails/[...slug]/page": "app/educationDetails/[...slug]/page.js",
+  "/basicinformation/[...slug]/page": "app/basicinformation/[...slug]/page.js"
 }

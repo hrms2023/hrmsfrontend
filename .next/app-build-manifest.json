@@ -17,29 +17,35 @@
       "static/css/app/bankdetails/page.css",
       "static/chunks/app/bankdetails/page.js"
     ],
-    "/basicinformation/[...slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/basicinformation/[...slug]/page.css",
-      "static/chunks/app/basicinformation/[...slug]/page.js"
-    ],
-    "/basicinformation/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/basicinformation/page.css",
-      "static/chunks/app/basicinformation/page.js"
-    ],
     "/jobdetails/[...slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/jobdetails/[...slug]/page.css",
       "static/chunks/app/jobdetails/[...slug]/page.js"
     ],
+    "/basicinformation/[...slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/basicinformation/[...slug]/page.css",
+      "static/chunks/app/basicinformation/[...slug]/page.js"
+    ],
     "/artistprofile/[...slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/artistprofile/[...slug]/page.css",
       "static/chunks/app/artistprofile/[...slug]/page.js"
+    ],
+    "/educationDetails/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/educationDetails/page.css",
+      "static/chunks/app/educationDetails/page.js"
+    ],
+    "/educationDetails/[...slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/educationDetails/[...slug]/page.css",
+      "static/chunks/app/educationDetails/[...slug]/page.js"
     ]
   }
 }
