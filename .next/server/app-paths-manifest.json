@@ -1,8 +1,8 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/bankdetails/page": "app/bankdetails/page.js",
-  "/educationDetails/page": "app/educationDetails/page.js",
-  "/jobdetails/[...slug]/page": "app/jobdetails/[...slug]/page.js",
-  "/educationDetails/[...slug]/page": "app/educationDetails/[...slug]/page.js",
-  "/basicinformation/[...slug]/page": "app/basicinformation/[...slug]/page.js"
+  "/addressList/page": "app/addressList/page.js",
+  "/enquiry/page": "app/enquiry/page.js",
+  "/paymentOptions/page": "app/paymentOptions/page.js",
+  "/orderlist/page": "app/orderlist/page.js",
+  "/employeeAddAddress/page": "app/employeeAddAddress/page.js",
+  "/addAddress/page": "app/addAddress/page.js"
 }
