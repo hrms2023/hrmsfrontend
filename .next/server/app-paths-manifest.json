@@ -1,8 +1,6 @@
 {
-  "/addressList/page": "app/addressList/page.js",
-  "/enquiry/page": "app/enquiry/page.js",
-  "/paymentOptions/page": "app/paymentOptions/page.js",
-  "/orderlist/page": "app/orderlist/page.js",
-  "/employeeAddAddress/page": "app/employeeAddAddress/page.js",
-  "/addAddress/page": "app/addAddress/page.js"
+  "/bankdetails/page": "app/bankdetails/page.js",
+  "/employeeList/page": "app/employeeList/page.js",
+  "/adminCategoryPanel/page": "app/adminCategoryPanel/page.js",
+  "/basicinformation/[...slug]/page": "app/basicinformation/[...slug]/page.js"
 }

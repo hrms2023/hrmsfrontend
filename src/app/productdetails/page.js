@@ -54,14 +54,6 @@ const page = () => {
             </div>
             <div className='flex flex-col mt-4'>
                 {reviews && (<ProductReviews reviews={reviews} />)}
-                {reviews && (<div className='border-b border-gray-300 mb-3 px-10 w-full'></div>)}
-                {reviews && (<ProductReviews reviews={reviews} />)}
-                {reviews && (<div className='border-b border-gray-300 mb-3 px-10 w-full'></div>)}
-                {reviews && (<ProductReviews reviews={reviews} />)}
-                {reviews && (<div className='border-b border-gray-300 mb-3 px-10 w-full'></div>)}
-                {reviews && (<ProductReviews reviews={reviews} />)}
-                {reviews && (<div className='border-b border-gray-300 mb-3 px-10 w-full'></div>)}
-                {reviews && (<ProductReviews reviews={reviews} />)}
                 {details && (<ProductInfo details={details} />)}
                 {polcies && (<ExchangePolicies polcies = {polcies}/>) }
             </div>

@@ -1,9 +1,10 @@
 {
   "pages": {
-    "/page": [
+    "/bankdetails/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/css/app/bankdetails/page.css",
+      "static/chunks/app/bankdetails/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,94 +12,21 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/bankdetails/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/bankdetails/page.css",
-      "static/chunks/app/bankdetails/page.js"
-    ],
-    "/educationDetails/[...slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/educationDetails/[...slug]/page.css",
-      "static/chunks/app/educationDetails/[...slug]/page.js"
-    ],
-    "/jobdetails/[...slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/jobdetails/[...slug]/page.css",
-      "static/chunks/app/jobdetails/[...slug]/page.js"
-    ],
-    "/personaldocument/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/personaldocument/page.css",
-      "static/chunks/app/personaldocument/page.js"
-    ],
-    "/personaldocument/[...slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/personaldocument/[...slug]/page.css",
-      "static/chunks/app/personaldocument/[...slug]/page.js"
-    ],
-    "/lastEmployee/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/lastEmployee/page.css",
-      "static/chunks/app/lastEmployee/page.js"
-    ],
-    "/lastEmployee/[...slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/lastEmployee/[...slug]/page.css",
-      "static/chunks/app/lastEmployee/[...slug]/page.js"
-    ],
-    "/artistprofile/[...slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/artistprofile/[...slug]/page.css",
-      "static/chunks/app/artistprofile/[...slug]/page.js"
-    ],
     "/basicinformation/[...slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/basicinformation/[...slug]/page.css",
       "static/chunks/app/basicinformation/[...slug]/page.js"
     ],
-    "/addAddress/page": [
+    "/employeeList/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/addAddress/page.js"
+      "static/chunks/app/employeeList/page.js"
     ],
-    "/login/page": [
+    "/adminCategoryPanel/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
-    ],
-    "/enquiry/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/enquiry/page.js"
-    ],
-    "/addressList/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/addressList/page.js"
-    ],
-    "/paymentOptions/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/paymentOptions/page.js"
-    ],
-    "/orderlist/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/orderlist/page.js"
-    ],
-    "/employeeAddAddress/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/employeeAddAddress/page.js"
+      "static/chunks/app/adminCategoryPanel/page.js"
     ]
   }
 }

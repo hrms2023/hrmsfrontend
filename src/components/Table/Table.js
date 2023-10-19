@@ -1,10 +1,23 @@
-'use client'
-import React, { useMemo, useState } from 'react'
-import { useTable, useFilters, useGlobalFilter, useAsyncDebounce, useSortBy, usePagination } from 'react-table'
-import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
+"use client";
+import React, { useMemo, useState } from "react";
+import {
+  useTable,
+  useFilters,
+  useGlobalFilter,
+  useAsyncDebounce,
+  useSortBy,
+  usePagination,
+} from "react-table";
+import {
+  ChevronDoubleLeftIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronDoubleRightIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/solid";
 // import { Button, PageButton } from './shared/buttons'
-import { classNames } from './shared/Utils'
-import { SortIcon, SortUpIcon, SortDownIcon } from './shared/Icons.js'
+import { classNames } from "./shared/Utils";
+import { SortIcon, SortUpIcon, SortDownIcon } from "./shared/Icons.js";
 
 // Define a default UI for filtering
 // function GlobalFilter({
@@ -79,32 +92,36 @@ export function StatusPill({ value }) {
 
   return (
     <span
-      className={
-        classNames(
-          "px-3 py-1 uppercase leading-wide font-bold text-[12px] rounded-full shadow-sm",
-          status.startsWith("active") ? "bg-green-100 text-green-800" : null,
-          status.startsWith("inactive") ? "bg-yellow-100 text-yellow-800" : null,
-          status.startsWith("offline") ? "bg-red-100 text-red-800" : null,
-        )
-      }
+      className={classNames(
+        "px-3 py-1 uppercase leading-wide font-bold text-[12px] rounded-full shadow-sm",
+        status.startsWith("active") ? "bg-green-100 text-green-800" : null,
+        status.startsWith("inactive") ? "bg-yellow-100 text-yellow-800" : null,
+        status.startsWith("offline") ? "bg-red-100 text-red-800" : null
+      )}
     >
       {status}
     </span>
   );
-};
+}
 
 export function AvatarCell({ value, column, row }) {
   return (
     <div className="flex items-center">
       <div className="flex-shrink-0 h-10 w-10">
-        <img className="h-10 w-10 rounded-full" src={row.original[column.imgAccessor]} alt="" />
+        <img
+          className="h-10 w-10 rounded-full"
+          src={row.original[column.imgAccessor]}
+          alt=""
+        />
       </div>
       <div className="ml-4">
         <div className="text-[12px] font-medium text-gray-900">{value}</div>
-        <div className="text-[12px] text-gray-500">{row.original[column.emailAccessor]}</div>
+        <div className="text-[12px] text-gray-500">
+          {row.original[column.emailAccessor]}
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 function Table({ columns, data }) {
@@ -130,15 +147,16 @@ function Table({ columns, data }) {
     state,
     preGlobalFilteredRows,
     setGlobalFilter,
-  } = useTable({
-    columns,
-    data,
-  },
+  } = useTable(
+    {
+      columns,
+      data,
+    },
     useFilters, // useFilters!
     useGlobalFilter,
     useSortBy,
-    usePagination,  // new
-  )
+    usePagination // new
+  );
 
   // Render the UI for your table
   return (
@@ -149,6 +167,7 @@ function Table({ columns, data }) {
           globalFilter={state.globalFilter}
           setGlobalFilter={setGlobalFilter}
         /> */}
+
         {headerGroups.map((headerGroup) =>
           headerGroup.headers.map((column) =>
             column.Filter ? (
@@ -160,33 +179,88 @@ function Table({ columns, data }) {
         )}
       </div>
       {/* table */}
-      <div className="mt-4 flex flex-col">
+      <div className="mt-4 flex flex-col font-semibold">
         <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-              <table {...getTableProps()} className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  {headerGroups.map(headerGroup => (
+            <div className="shadow overflow-hidden  border-gray-200  sm:rounded-lg">
+              
+              <div className="flex flex-row justify-between items-center text-center ml-5 ">
+                <div className="flex flex-row">
+                  <label className="text-[20px] font-semibold items-center text-center">
+                    <p className="px-2 items-center text-center font-semibold text-lg">
+                      Location List
+                    </p>
+                  </label>
+
+                  <div className="relative rounded-md shadow-sm ml-20">
+                    <input
+                      type="text"
+                      value={state.globalFilter || ""}
+                      onChange={(e) =>
+                        setGlobalFilter(e.target.value || undefined)
+                      }
+                      placeholder="Search..."
+                      className="block w-full pl-20 pr-3 py-2 "
+                    />
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <MagnifyingGlassIcon
+                      
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-row items-center text-center ">
+                  <div className="mr-20">
+                    
+                  <span className= "flex flex-row  text-neutral-900 text-sm font-normal font-['Roboto'] ">Country  <SortDownIcon className="w-4 h-4 ml-1 #000000 items-center text-center" /></span>
+                  </div>
+                  <div className="mr-20">
+                  <span className= "flex flex-row  text-neutral-900 text-sm font-normal font-['Roboto'] "> State  <SortDownIcon className="w-4 h-4 ml-1 #000000 items-center text-center" /></span>
+                    <p></p>
+                  </div>
+                  <div className="mr-20">
+                    <span className= "flex flex-row  text-neutral-900 text-sm font-normal font-['Roboto'] ">City  <SortDownIcon className="w-4 h-4 ml-1 #000000 items-center text-center" /></span>
+                  </div>
+                  <div className="mr-16">
+                  <div class="text-right text-red-600 text-xs font-normal font-['Roboto'] underline">View log</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <table
+                {...getTableProps()}
+                className="min-w-full divide-gray-200"
+              >
+                <thead className="">
+                  {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
-                      {headerGroup.headers.map(column => (
+                      {headerGroup.headers.map((column) => (
                         // Add the sorting props to control sorting. For this example
                         // we can add them into the header props
                         <th
                           scope="col"
-                          className="group px-3 py-3  text-[12px] font-medium text-gray-500 uppercase "
-                          {...column.getHeaderProps(column.getSortByToggleProps())}
+                          className="group px-3 py-3  text-black text-sm font-medium font-['Roboto'] uppercase "
+                          {...column.getHeaderProps(
+                            column.getSortByToggleProps()
+                          )}
                         >
                           <div className="flex flex-row items-center justify-center">
-                            {column.render('Header')}
+                            {column.render("Header")}
                             {/* Add a sort direction indicator */}
                             <span>
-                              {column.isSorted
-                                ? column.isSortedDesc
-                                  ? <SortDownIcon className="w-4 h-4 text-gray-400" />
-                                  : <SortUpIcon className="w-4 h-4 text-gray-400" />
-                                : (
-                                  <SortIcon className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100" />
-                                )}
+                              {column.isSorted ? (
+                                column.isSortedDesc ? (
+                                  <SortDownIcon className="w-4 h-4 text-gray-400" />
+                                ) : (
+                                  <SortUpIcon className="w-4 h-4 text-gray-400" />
+                                )
+                              ) : (
+                                <SortIcon className="w-4 h-4 #000000 opacity-0 group-hover:opacity-100" />
+                              )}
                             </span>
                           </div>
                         </th>
@@ -196,28 +270,32 @@ function Table({ columns, data }) {
                 </thead>
                 <tbody
                   {...getTableBodyProps()}
-                  className="bg-white divide-y divide-gray-200"
+                  className="bg-white  divide-gray-200"
                 >
-                  {page.map((row, i) => {  // new
-                    prepareRow(row)
+                  {page.map((row, i) => {
+                    // new
+                    prepareRow(row);
                     return (
                       <tr {...row.getRowProps()}>
-                        {row.cells.map(cell => {
+                        {row.cells.map((cell) => {
                           return (
                             <td
                               {...cell.getCellProps()}
                               className="px-3 py-4 whitespace-nowrap"
                               role="cell"
                             >
-                              {cell.column.Cell.name === "defaultRenderer"
-                                ? <div className="text-[12px] text-gray-500 flex flex-row items-center text-center justify-center">{cell.render('Cell')}</div>
-                                : cell.render('Cell')
-                              }
+                              {cell.column.Cell.name === "defaultRenderer" ? (
+                                <div className="text-black text-xs font-normal font-['Roboto'] 0 flex flex-row items-center text-center justify-center">
+                                  {cell.render("Cell")}
+                                </div>
+                              ) : (
+                                cell.render("Cell")
+                              )}
                             </td>
-                          )
+                          );
                         })}
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </table>
@@ -234,18 +312,19 @@ function Table({ columns, data }) {
         <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
           <div className="flex gap-x-2 items-baseline">
             <span className="text-[12px] text-gray-700">
-              Page <span className="font-medium">{state.pageIndex + 1}</span> of <span className="font-medium">{pageOptions.length}</span>
+              Page <span className="font-medium">{state.pageIndex + 1}</span> of{" "}
+              <span className="font-medium">{pageOptions.length}</span>
             </span>
             <label>
               <span className="sr-only">Items Per Page</span>
               <select
                 className="mt-1 block w-full text-[12px] rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 value={state.pageSize}
-                onChange={e => {
-                  setPageSize(Number(e.target.value))
+                onChange={(e) => {
+                  setPageSize(Number(e.target.value));
                 }}
               >
-                {[5, 10, 20].map(pageSize => (
+                {[5, 10, 20].map((pageSize) => (
                   <option key={pageSize} value={pageSize}>
                     Show {pageSize}
                   </option>
@@ -254,7 +333,10 @@ function Table({ columns, data }) {
             </label>
           </div>
           <div>
-            <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+            <nav
+              className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+              aria-label="Pagination"
+            >
               {/* <PageButton
                 className="rounded-l-md"
                 onClick={() => gotoPage(0)}
@@ -290,7 +372,7 @@ function Table({ columns, data }) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Table;

@@ -1,13 +1,34 @@
 // http://localhost:8090/api/admin/category
 export const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:8090/api/admin/category");
+      const response = await fetch("http://localhost:8080/api/locations");
       
       if (!response.ok) {
+        console.log("data", response)
         throw new Error('Network response was not ok');
+       
       }
   
       const data = await response.json();
+
+      return data;
+    } catch (error) {
+      throw new Error('Error fetching categories: ' + error.message);
+    }
+  };
+  export const fetchCategories1 = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/api/employeeinfo");
+      
+      if (!response.ok) {
+        console.log("data", response)
+        console.log("dtasysy")
+        throw new Error('Network response was not ok');
+       
+      }
+  
+      const data = await response.json();
+
       return data;
     } catch (error) {
       throw new Error('Error fetching categories: ' + error.message);
